@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page asterisks (*) </title>
+</head>
+
+<body>
+    <p id=1></p>
+    <p id=2></p>
+    <p id=3></p>
+
+        <script>
+                var min=0,max=30;
+              
+                var num1= prompt("ENTER  INPUT","");
+                if(num1.length<1||num1<min||num1>max||isNaN(num1))
+                    {
+                       
+                       window.alert("Plz enter valid inputs in range 1-30 ");
+                       num1=Redo(num1);
+                       
+                    }
+                
+                
+                var num2= prompt("ENTER  INPUT","");
+
+                if(num2.length<1||num2<min||num2>max||isNaN(num2))
+                   {
+                       
+                       window.alert("Plz enter valid inputs in range 1-30 ");
+                       num2=Redo(num2);
+                   }
+             
+
+                var num3= prompt("ENTER  INPUT","");
+
+                if(num3.length<1||num3<min||num3>max||isNaN(num3))
+                   {
+                       window.alert("Plz enter valid inputs in range 1-30 ");
+                       num3=Redo(num3);
+                   }
+        
+               
+                  
+                     document.getElementById("1").innerHTML="*".repeat(num1)
+                    
+                     document.getElementById("2").innerHTML="*".repeat(num2)
+
+                     document.getElementById("3").innerHTML="*".repeat(num3)
+                  
+                  
+                  function Redo(num){
+                      this.num=prompt("Enter Input");
+                      if(this.num.length<1||this.num<min||this.num>max||isNaN(this.num))
+                    {
+                       
+                       window.alert("Plz enter valid inputs in range 1-30 ");
+                       this.num=Redo(this.num);
+                       
+                    }
+                      return (this.num);
+
+                  }
+             
+       </script>  
+</body>
+
+</html>

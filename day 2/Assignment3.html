@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Tables</title>
+    <style>
+                
+                
+    table ,tr  {
+
+    padding: 2px;
+    height: 50px;
+    width: 900px;
+    font-size: 20px;
+    text-align: center;
+     }
+
+   td {
+   padding: 1px;
+   background-color: lightgray;
+   color: black;
+   }
+
+   </style>
+    
+</head>
+<body>
+
+    <input type="button" onclick="createTable()" value="create table"> 
+    <table id="myTable" align="center"></table>
+    <script>
+
+        function createTable()
+        { 
+         var row= prompt("ENTER NO OF ROWS ");
+        
+        if(row.length<1||isNaN(row))
+        {
+            window.alert("Please enter no of rows");
+            row=Redo(row);
+        }
+
+         var col= prompt("ENTER NO OF COLUMNS");
+
+         if(col.length<1||isNaN(col))
+        {
+            window.alert("Please enter no of columns");
+            col=Redo(col);
+        }
+
+         
+
+         for(var r=0;r<parseInt(row,10);r++)
+         {
+         var x=document.getElementById('myTable').insertRow(r);
+         for(var c=0;c<parseInt(col,10);c++)  
+         {
+         var y=  x.insertCell(c);
+         y.innerHTML="Row-"+(r+1)+" Column-"+(c+1); 
+         }
+         }
+         }
+         function Redo(num)
+        {
+            this.num=prompt("Enter Input");
+
+            if(this.num.length<1||isNaN(this.num))
+                {
+                  window.alert("Plz enter valid input");
+                  this.num=Redo(this.num);
+                       
+                }
+                  return (this.num);
+
+         }
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+1) 5 dom objects:
+DOCUMENTS
+ELEMENTS
+ATTRIBUTES
+EVENT 
+STYLE
+
+2) 5 BOM OBJECTS
+NAIGATOR
+HISTORY
+WINDOW
+LOCATION
+SCREEN
+
+3) 4 DOM FUNCTIONS
+ var First = isNumber(document.getElementById('num1').value);
+
+ var objTitle = document.createElement('h1');
+
+ document.addEventListener("click", function(){ document.getElementById("demo").innerHTML = "Hello World!";});
+
+ var t = document.createTextNode("Hello World");
+ var x = document.activeElement.tagName;
+
+4) 4 WINDOW OBJECT FUNCTIONS
+
+ var x = "Cookies enabled: " + navigator.cookieEnabled;
+ var x = "Available Height: " + screen.availHeight + "px";
+ navigator.geolocation.getCurrentPosition(showPosition);
+ var x = location.hostname;
+ var x = location.pathname;
+ var x = history.length;
+ console.error("You made a mistake");
+
+
+
+ 

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Calculator</title>
+</head>
+<body>
+
+    <input type="number"  id="1"> <br> <br>
+    <button onclick="mycalc()">Run Calculator</button>
+
+
+<script>
+    function mycalc(){
+    var min=1,max=7;
+     choice=prompt("Enter a choice \n \n"+           
+           "1.Add \n"+ 
+           "2.Subtract\n"+
+           "3.Multiply \n"+
+           "4.Divide\n"+
+           "5.Exponent \n"+
+           "6.Mean \n"+
+           "7.Quit \n");
+
+
+           if(choice.length<1||isNaN(choice)||choice<min||choice>max)
+                    {
+                       
+                       window.alert("Plz enter valid inputs in range 1-7");
+                       choice=Redo(choice,1);
+                       
+                    }
+
+            
+                 if(choice<=4)
+                 {
+                 a=prompt("Enter first value:");
+                if(a.length<1||isNaN(a))
+                {
+                    window.alert("Plz enter a valid input");
+                       a=Redo(a,2);
+                      
+
+                }
+                 b=prompt("Enter second value:");
+                if(b.length<1||isNaN(b))
+                {
+                    window.alert("Plz enter a valid input");
+                       b=Redo(b,2);
+                
+
+                }
+
+                 a=parseInt(a);
+                 b=parseInt(b);
+                }
+
+                switch(choice)
+                {
+                    case"1":document.getElementById("1").value=(a+b);
+                            break; 
+                    case"2":document.getElementById("1").value=(a-b);
+                            break;        
+                    case"3":document.getElementById("1").value=(a*b);
+                            break;
+                    case"4":document.getElementById("1").value=(a/b);
+                            break; 
+                    case"5":var base=prompt("Enter Base value");
+                            if(base.length<1||isNaN(base))
+                            {
+                             window.alert("Plz enter a valid Base value");
+                             base=Redo(base,2);
+                            }
+                            var expo=prompt("Enter Exponent value");
+                            if(expo.length<1||isNaN(expo))
+                            {
+                             window.alert("Plz enter a valid Exponent value");
+                             expo=Redo(expo,2);
+                            }
+                            base=parseInt(base);
+                            expo=parseInt(expo);
+                            document.getElementById("1").value=(Math.pow(base,expo));
+                            break;   
+                    case"6":var mean=0,s=0;
+                            var temp=prompt("Enter the series it should end with ***");
+                            if(temp.length<1)
+                           {
+                           window.alert("Plz enter a valid input");
+                           temp=Redo(temp,3);
+
+                           }
+
+
+
+                            for(var c=0;temp!='***';c++)
+                            {
+                                    s=s+parseInt(temp);
+                                    temp=prompt("Enter next value");
+                                    if(temp.length<1)
+                                    {
+                                     window.alert("Plz enter a valid input");
+                                     temp=Redo(temp,3);
+                                    }
+
+                            }
+                            mean=s/parseInt(c);
+                            document.getElementById("1").value=mean;
+                            break;    
+                    case"7":break;    
+
+                }
+
+                function Redo(num,flag)
+                {
+                if(flag==1)
+                {
+
+                this.num=prompt("Enter a choice \n \n"+           
+                      "1.Add \n"+ 
+                      "2.Subtract\n"+
+                      "3.Multiply \n"+
+                      "4.Divide\n"+
+                      "5.Exponent \n"+
+                      "6.Mean \n"+
+                      "7.Quit \n");
+
+                 if(this.num.length<1||isNaN(this.num)||this.num<min||this.num>max)
+                    {
+                       
+                       window.alert("Plz enter valid inputs in range 1-7");
+                       this.num=Redo(this.num,1);
+                       
+                    }
+
+               }
+
+                if(flag==2)
+                {
+                  this.num=prompt("Enter value:");
+                if(this.num.length<1||isNaN(this.num))
+                {
+                       window.alert("Plz enter a valid input");
+                       this.num=Redo(this.num,2);
+
+                }
+
+               }
+
+               if(flag==3)
+                {
+                  this.num=prompt("Enter value:");
+                if(this.num.length<1)
+                {
+                       window.alert("Plz enter a valid input");
+                       this.num=Redo(this.num,3);
+
+                }
+
+               }
+               return (this.num);     
+        }
+     }             
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fahrenheit to Celsius </title>
+</head>
+<body>
+    INPUT:
+    <input type="text" name="" id="1"> <br> <br>
+    <button type="button" onclick=main()>Click Me!</button> <br> <br>
+     RESULT:
+     <input type="text" name="" id="2">
+    <script>
+        function main(){
+            var x=document.getElementById("1").value;
+             if (x.length < 1)
+                {
+                   window.alert("Input Field is blank");
+                   return false;
+                }
+
+             if(isNaN(x))
+             {
+                 window.alert("Please enter NUMERIC values only");
+                 return false;
+             }
+      
+            x=(x-32)/1.8000;
+            document.getElementById("2").value = x;
+
+        }
+    </script>
+</body>
+</html>
